@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """define class rectangle"""
 
 
@@ -33,7 +32,7 @@ class Rectangle:
     def height(self):
         """Get/set the current height of the Rectangle."""
         return (self.__height)
-    
+
     @height.setter
     def height(self, value):
         if not isinstance(value, int):
