@@ -1,0 +1,19 @@
+=================================
+How to Use 101-lazy_matrix_mul.py
+=================================
+
+This module provides a matrix multiplication function, `lazy_matrix_mul(m_a, m_b)`.
+
+Usage
+=====
+
+`lazy_matrix_mul(...)` returns a new matrix resulting from the multiplication of `m_a` by `m_b`.
+
+Example 1:
+```python
+>>> from 101-lazy_matrix_mul import lazy_matrix_mul
+>>> m_a = [[1, 2], [3, 4]]
+>>> m_b = m_a
+>>> print(lazy_matrix_mul(m_a, m_b))
+[[ 7 10]
+ [15 22]]
