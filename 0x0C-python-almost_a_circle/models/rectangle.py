@@ -88,7 +88,10 @@ class Rectangle(Base):
         if self.width == 0 or self.height == 0:
             print("")
             return
+        for i in range(self.y):
+            print()
         for i in range(self.height):
+            print(" " * self.x, end="")
             for j in range(self.width):
                 print("#", end="")
             print()
@@ -96,3 +99,31 @@ class Rectangle(Base):
     def __str__(self):
         """returns [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
         return("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height))
+    
+    def update(self, *args, **kwargs):
+        """
+        Updates the attributes of the rectangle object.
+        Args:
+            *args: No-keyword arguments.
+            **kwargs: Keyword arguments.
+        """
+        # Update attributes based on positional arguments
+        if args:
+            for i, arg in enumerate(args):
+                if i == 0:
+                    self.id = arg
+                elif i == 1:
+                    self.width = arg
+                elif i == 2:
+                    self.height = arg
+                elif i == 3:
+                    self.x = arg
+                elif i == 4:
+                    self.y = arg
+                else:
+                    break
+
+        # Update remaining attributes using kwargs
+        for key, value in kwargs.items():
+            if hasattr(self, key):
+                setattr(self, key, value)
