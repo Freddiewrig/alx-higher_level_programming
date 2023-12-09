@@ -52,3 +52,11 @@ def update(self, *args, **kwargs):
         self.size = kwargs.get('size', self.size)
         self.x = kwargs.get('x', self.x)
         self.y = kwargs.get('y', self.y)
+def to_dictionary(self):
+    """returns the atrr of the square"""
+    return {
+        'id': self.id,
+        'size': self.size,
+        'x': self.x,
+        'y': self.y
+    }
