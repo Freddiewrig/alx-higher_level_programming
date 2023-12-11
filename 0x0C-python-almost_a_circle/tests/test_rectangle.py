@@ -77,3 +77,31 @@ class TestRectangle_instantiation(unittest.TestCase):
         r = Rectangle(10, 5, 0, 1, 1)
         r.y = 0
         self.assertEqual(0, r.y)
+    
+    def test_order_of_initialization(self):
+        r = Rectangle(1, 2, 3, 4, 5)
+        self.assertEqual((r.width, r.height, r.x, r.y, r.id), (1, 2, 3, 4, 5))
+
+    def test_area(self):
+        r = Rectangle(3, 4)
+        self.assertEqual(r.area(), 12)
+
+    def test_update_args(self):
+        r = Rectangle(1, 1)
+        r.update(2, 3, 4, 5, 6)
+        self.assertEqual((r.id, r.width, r.height, r.x, r.y), (2, 3, 4, 5, 6))
+
+    def test_update_kwargs(self):
+        r = Rectangle(1, 1)
+        r.update(id=2, width=3, height=4, x=5, y=6)
+        self.assertEqual((r.id, r.width, r.height, r.x, r.y), (2, 3, 4, 5, 6))
+
+    def test_to_dictionary(self):
+        r = Rectangle(1, 2, 3, 4, 5)
+        r_dict = r.to_dictionary()
+        self.assertEqual(
+            r_dict, {'id': 5, 'width': 1, 'height': 2, 'x': 3, 'y': 4})
+
+
+if __name__ == '__main__':
+    unittest.main()
