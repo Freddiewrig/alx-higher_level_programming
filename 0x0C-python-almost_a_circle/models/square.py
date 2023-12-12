@@ -15,49 +15,49 @@ class Square(rectangle):
             id(int): the id of the square.
         """
         super().__init__(size, size, x, y, id)
-@property
-def size(self):
-    """get/ set size of square"""
-    return self.width
+    @property
+    def size(self):
+        """get/ set size of square"""
+        return self.width
 
-@size.setter
-def size(self, value):
-    self.width = value
-    self.height = value
+    @size.setter
+    def size(self, value):
+        self.width = value
+        self.height = value
 
-def update(self, *args, **kwargs):
-    """
-    Updates the attributes of the square object.
+    def update(self, *args, **kwargs):
+        """
+        Updates the attributes of the square object.
 
-    Args:
-        *args: No-keyword arguments.
-        **kwargs: Keyword arguments.
-    """
-    if args:
-        # Update attributes based on positional arguments
-        for i, arg in enumerate(args):
-            if i == 0:
-                self.id = arg
-            elif i == 1:
-                self.size = arg
-            elif i == 2:
-                self.x = arg
-            elif i == 3:
-                self.y = arg
-            else:
-                break
-    else:
-        # Update attributes based on keyword arguments
-        self.id = kwargs.get('id', self.id)
-        self.size = kwargs.get('size', self.size)
-        self.x = kwargs.get('x', self.x)
-        self.y = kwargs.get('y', self.y)
+        Args:
+            *args: No-keyword arguments.
+            **kwargs: Keyword arguments.
+        """
+        if args:
+            # Update attributes based on positional arguments
+            for i, arg in enumerate(args):
+                if i == 0:
+                    self.id = arg
+                elif i == 1:
+                    self.size = arg
+                elif i == 2:
+                    self.x = arg
+                elif i == 3:
+                    self.y = arg
+                else:
+                    break
+        else:
+            # Update attributes based on keyword arguments
+            self.id = kwargs.get('id', self.id)
+            self.size = kwargs.get('size', self.size)
+            self.x = kwargs.get('x', self.x)
+            self.y = kwargs.get('y', self.y)
 
-def to_dictionary(self):
-    """returns the atrr of the square"""
-    return {
-        'id': self.id,
-        'size': self.size,
-        'x': self.x,
-        'y': self.y
-    }
+    def to_dictionary(self):
+        """returns the atrr of the square"""
+        return {
+            'id': self.id,
+            'size': self.size,
+            'x': self.x,
+            'y': self.y
+        }
